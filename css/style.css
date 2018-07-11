@@ -245,7 +245,7 @@ footer a.scrollup:focus {
 
 .form-group .form-control {
   padding: 7px 12px;
-  border-color:#eee;
+  border-color:#ada3a3;
   box-shadow: none;
   border-radius:0;
 }
@@ -267,7 +267,7 @@ textarea#message{
 	 -webkit-transition: background .3s ease-in-out;
     -moz-transition: background .3s ease-in-out;
     transition: background .3s ease-in-out;
-	background-color:#D09A43;
+	background-color:#c1c1c1;
 	border-color:#fff;
 }
 
