@@ -48,7 +48,6 @@ body {
     font-weight: 700;
 }
 
-
 .navbar-brand:focus {
     outline: 0;
 }
@@ -106,7 +105,7 @@ body {
 .navbar-fixed-top .nav li a:focus,
 .navbar-fixed-top .nav li.active {
     outline: 0;
-    background-color:#D09A43 ;
+    background-color:transparent ;
 	color:#fff;
 }
 
@@ -146,13 +145,10 @@ body {
     z-index:120;
 }
 
-
 .section-heading {
 	margin-top:120px;
 	margin-bottom:60px;
 }
-
-
 
 .section-heading h2 {
 	font-size: 40px;
@@ -173,17 +169,16 @@ body {
 }
 
 .service-icon:hover {
-	color:#D09A43;
+	color:#c1c1c1;
 	
 }
-
 
 /* ===========================
 --- Footer
 ============================ */
 
 footer {
-    background-color: #D09A43;
+    background-color: #c1c1c1;
 }
 
 footer {
@@ -212,10 +207,6 @@ footer a.scrollup {
 footer a.scrollup:focus {
 	outline: 0;
 }
-
-
-
-
 
 /* --- progress --- */
 .progress {
@@ -311,4 +302,3 @@ textarea#message{
 #sendmessage.show, #errormessage.show, .show {
 	display:block;
 }
-
