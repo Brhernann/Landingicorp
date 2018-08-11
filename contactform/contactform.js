@@ -90,24 +90,29 @@ jQuery(document).ready(function($) {
     });
     if (ferror) return false;
     else var str = $(this).serialize();
-    $.ajax({
-      type: "POST",
-      url: "contactform/contactform.php",
-      data: str,
-      success: function(msg) {
-        // alert(msg);
-        if (msg == 'OK') {
-          $("#sendmessage").addClass("show");
-          $("#errormessage").removeClass("show");
-          $('.contactForm').find("input, textarea").val("");
-        } else {
-          $("#sendmessage").removeClass("show");
-          $("#errormessage").addClass("show");
-          $('#errormessage').html(msg);
-        }
+    var template_params = {
+      "reply_to": "email",
+      "from_name": "name",
+      "to_name": "npsa1794@gmail.com",
+      "message_html": "message"
+   }
+   
+   emailjs.send('gmail', 'template_7ctaE1aQ', template_params)
+       .then(function(response) {
+         console.log('SUCCESS!', response.status, response.text);
+         if (response.text == 'OK') {
+           $("#sendmessage").addClass("show");
+           $("#errormessage").removeClass("show");
+           $('.contactForm').find("input, textarea").val("");
+         } else {
+           $("#sendmessage").removeClass("show");
+           $("#errormessage").addClass("show");
+         $('#errormessage').html(msg);
+         }
 
-      }
-    });
+       }, function(error) {
+          console.log('FAILED...', error);
+       });
     return false;
   });
 
