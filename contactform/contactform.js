@@ -89,14 +89,21 @@ jQuery(document).ready(function($) {
       }
     });
     if (ferror) return false;
-    else var str = $(this).serialize();
-    $.ajax({
-      type: "POST",
-      url: "contactform/contactform.php",
-      data: str,
-      success: function(msg) {
-        // alert(msg);
-        if (msg == 'OK') {
+    else var str = $(this).serializeArray();
+
+    console.log(str);
+
+    var template_params = {
+      "reply_to": str[1].value,
+      "from_name": str[0].value,
+      "to_name": 'Cintya',
+      "message_html": str[3].value
+   }
+   
+  emailjs.send('gmail', 'template_7ctaE1aQ', template_params)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        if (response.text == 'OK') {
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
           $('.contactForm').find("input, textarea").val("");
@@ -106,8 +113,10 @@ jQuery(document).ready(function($) {
           $('#errormessage').html(msg);
         }
 
-      }
-    });
+      }, function(error) {
+         console.log('FAILED...', error);
+      });
+    
     return false;
   });
 
