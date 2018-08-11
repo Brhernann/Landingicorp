@@ -100,7 +100,7 @@ jQuery(document).ready(function($) {
       "message_html": str[3].value
    }
    
-  emailjs.send('gmail', 'template_7ctaE1aQ', template_params)
+  emailjs.send('gmail', 'template_tIlaNBOa', template_params)
       .then(function(response) {
         console.log('SUCCESS!', response.status, response.text);
         if (response.text == 'OK') {
