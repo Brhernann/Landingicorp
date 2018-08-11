@@ -89,30 +89,34 @@ jQuery(document).ready(function($) {
       }
     });
     if (ferror) return false;
-    else var str = $(this).serialize();
+    else var str = $(this).serializeArray();
+
+    console.log(str);
+
     var template_params = {
-      "reply_to": "email",
-      "from_name": "name",
-      "to_name": "npsa1794@gmail.com",
-      "message_html": "message"
+      "reply_to": str[1].value,
+      "from_name": str[0].value,
+      "to_name": 'Cintya',
+      "message_html": str[3].value
    }
    
-   emailjs.send('gmail', 'template_7ctaE1aQ', template_params)
-       .then(function(response) {
-         console.log('SUCCESS!', response.status, response.text);
-         if (response.text == 'OK') {
-           $("#sendmessage").addClass("show");
-           $("#errormessage").removeClass("show");
-           $('.contactForm').find("input, textarea").val("");
-         } else {
-           $("#sendmessage").removeClass("show");
-           $("#errormessage").addClass("show");
-         $('#errormessage').html(msg);
-         }
+  emailjs.send('gmail', 'template_7ctaE1aQ', template_params)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        if (response.text == 'OK') {
+          $("#sendmessage").addClass("show");
+          $("#errormessage").removeClass("show");
+          $('.contactForm').find("input, textarea").val("");
+        } else {
+          $("#sendmessage").removeClass("show");
+          $("#errormessage").addClass("show");
+          $('#errormessage').html(msg);
+        }
 
-       }, function(error) {
-          console.log('FAILED...', error);
-       });
+      }, function(error) {
+         console.log('FAILED...', error);
+      });
+    
     return false;
   });
 

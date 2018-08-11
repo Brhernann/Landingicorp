@@ -304,35 +304,34 @@
           </div>
         </div> -->
       <section id="contact">
-            <div class="container">
-                <div class="row contact-wrap">
-                  <div class="col-md-8 col-md-offset-2">
-                    <div id="sendmessage">Your message has been sent. Thank you!</div>
-                    <div id="errormessage"></div>
-                    <form action="" method="post" role="form" class="contactForm">
-                      <div class="form-group">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Ingrese Nombre" data-rule="minlen:4" data-msg="Ingrese 4 caracteres o mas"
-                        />
-                        <div class="validation"></div>
-                      </div>
-                      <div class="form-group">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Tu Correo" data-rule="email" data-msg="Ingrese correo valido"
-                        />
-                        <div class="validation"></div>
-                      </div>
-                      <!-- <div class="form-group">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Ingrese por lo menos 8 caracteres"
-                        />
-                        <div class="validation"></div>
-                      </div> -->
-                      <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
-                        <div class="validation"></div>
-                      </div>
-                      <div class="text-center">
-                        <button type="submit" class="btn btn-primary btn-lg">Enviar Mensaje</button>
-                      </div>
-                  </div>
+        <div class="container">
+          <div class="row contact-wrap">
+            <div class="col-md-8 col-md-offset-2">
+              <div id="sendmessage">Tu mensaje ha sido enviado. Gracias</div>
+              <div id="errormessage"></div>
+              <form action="" method="post" role="form" class="contactForm">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Ingrese Nombre" data-rule="minlen:4" data-msg="Ingrese 4 caracteres o mas"
+                  />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Tu Correo" data-rule="email" data-msg="Ingrese correo valido"
+                  />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Ingrese por lo menos 8 caracteres"
+                  />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
+                  <div class="validation"></div>
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary btn-lg">Enviar Mensaje</button>
                 </div>
               </div>
         </form>
@@ -385,6 +384,12 @@
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key="></script> -->
     <script src="js/functions.js"></script>
     <script src="contactform/contactform.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+      emailjs.init("user_MPNjUCeltLHwdkutYlcPQ");
+      })();
+</script>
 
 </body>
 
